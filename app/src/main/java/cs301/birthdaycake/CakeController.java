@@ -4,8 +4,9 @@ import android.content.res.Resources;
 import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.SeekBar;
 
-public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener {
 
     private CakeView cakeView;
     private CakeModel cakeModel;
@@ -29,6 +30,22 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
 
         cakeModel.hasCandles = isChecked;
         cakeView.invalidate();
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        cakeModel.numCandles = progress;
+        cakeView.invalidate();
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+        // this space intentionally left blank
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+        // this space intentionally left blank
     }
 
     private String getViewResourceEntryName(View view) {
