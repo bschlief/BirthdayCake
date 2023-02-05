@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
         CakeView cakeView = findViewById(R.id.cakeview);
         CakeController cakeController = new CakeController(cakeView);
-        Log.d("schlief","CakeController created");
+
+        Button blowoutButton = findViewById(R.id.blowOutButton);
+        blowoutButton.setOnClickListener(cakeController);
     }
 
     public void goodbye(View button) {
