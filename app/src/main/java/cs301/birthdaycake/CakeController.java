@@ -51,4 +51,10 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
     private String getViewResourceEntryName(View view) {
         return view.getResources().getResourceEntryName(view.getId());
     }
+
+
+    private void whatever() {
+
+        
+    }
 }
